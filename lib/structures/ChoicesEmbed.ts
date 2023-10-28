@@ -6,7 +6,7 @@ import {
   SelectMenuBuilder,
   SelectMenuInteraction,
   SelectMenuOptionBuilder,
-  WebhookEditMessageOptions,
+  WebhookMessageEditOptions,
 } from 'discord.js';
 import DealsEmbed from './DealsEmbed';
 import { createBasicEmbed, getSearchUrl } from '../util/helpers';
@@ -54,7 +54,7 @@ export default class ChoicesEmbed extends EmbedBuilder {
     return this._embed;
   }
 
-  createAsMessageOpts(): WebhookEditMessageOptions {
+  createAsMessageOpts(): WebhookMessageEditOptions {
     return {
       embeds: [this._embed],
       components: [this._getSelectMenu()],

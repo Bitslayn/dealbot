@@ -1,7 +1,7 @@
 import {
   ChatInputCommandInteraction,
   EmbedBuilder,
-  WebhookEditMessageOptions,
+  WebhookMessageEditOptions,
 } from 'discord.js';
 import { toCurrency, toTitleCase } from '../util/helpers';
 import { BasicEmbed, DealsEmbedOptions } from '../util/types';
@@ -33,7 +33,7 @@ export default class DealsEmbed {
     return this._embed;
   }
 
-  async createAsMessageOpts(): Promise<WebhookEditMessageOptions> {
+  async createAsMessageOpts(): Promise<WebhookMessageEditOptions> {
     const embed = await this.create();
     return {
       embeds: [embed],
